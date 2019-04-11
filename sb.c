@@ -103,13 +103,13 @@ void sbPuts(u16_t *txt, ft32_t fg, ft32_t bg)
 
           u16p++;
         }
-        else {             /* soft LF */
+        else {         /* soft LF */
           _sb.row++;
           _sb.col = 0;
         }
       }
     }
-    else {                 /* LF */
+    else {             /* LF */
       _sb.row++;
       _sb.col = 0;
       u16p++;
