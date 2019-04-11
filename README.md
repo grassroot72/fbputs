@@ -2,7 +2,12 @@
 ```
 A program to show unicode strings on the linux framebuffer.
 
-This program is to simulate the "cat" to output file content onto the linux framebuffer. Since the repository name "fbcat" has already been taken by another project, I have to give my repository another name. The main purpose of my program is to "puts" strings onto the linux framebuffer, so I use "fb" as the prefix of "puts" and name the repository as "fbputs".
+This program is to simulate the "cat" to output file content onto the 
+linux framebuffer. Since the repository name "fbcat" has already been 
+taken by another project, I have to give my repository another name.
+The main purpose of my program is to "puts" strings onto the linux 
+framebuffer, so I use "fb" as the prefix of "puts" and name the repository
+as "fbputs".
 ```
 
 ## Features
@@ -42,7 +47,10 @@ If you run this program with a filename, it will display the file content.
 
 ## About Unicode
 ```
-In Asia, most of the time, double width characters are used, UTF-16 encoding is more efficient than UTF-8 encoding. It has less memory footprint and use less CPU time to process.
+In Asia, most of the time, double width characters are used, UTF-16 encoding 
+is more efficient than UTF-8 encoding. It has less memory footprint and use 
+less CPU time to process.
 
-Is it possible to create a default UTF-16 encoded linux kernel for Asia countries? ...... Just joking :) 
+Is it possible to create a default UTF-16 encoded linux kernel for Asia countries?
+...... Just joking :) 
 ```
