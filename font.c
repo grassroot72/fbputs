@@ -101,14 +101,11 @@ static void _ftBmp(FT_Bitmap *bmp, FT_Int x, FT_Int y)
   FT_Int xmax = x + bmp->width;
   FT_Int ymax = y + bmp->rows;
 
-  /*
-    for simplicity, we assume that 'bitmap->pixel_mode'
-    is 'FT_PIXEL_MODE_GRAY' (i.e., not a bitmap font)
-  */
   for (i = x, p = 0; i < xmax; i++, p++) {
     for (j = y, q = 0; j < ymax; j++, q++) {
-      if (i < 0 || j < 0 || i >= CELLW || j >= CELLH)
+      if (i < 0 || j < 0 || i >= CELLW || j >= CELLH) {
         continue;
+      }
       _ft.img[j][i] |= bmp->buffer[q * bmp->width + p];
     }
   }
