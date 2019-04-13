@@ -217,10 +217,14 @@ u32_t ucLoadToU16(u16_t *u16buf, char *fname)
     u16buf[u16n++] = '\0';
     fclose(fp);
 
+#ifdef UNICODE_INFO
+    fprintf(stdout, "UTF-16 encoded, %d characters\n", u16n);
+#endif
+
     return u16n;
   }
   else if (bomchk == 1) {
-    fread(&u8bom, sizeof(u8_t), 1, fp);   /* 0xBF */
+    fread(&u8bom, sizeof(u8_t), 1, fp);   /* UTF-8 BOM last byte: 0xBF */
     if (u8bom != 0xbf) {
       fprintf(stderr, "not a valid UTF-8 file\n");
       fclose(fp);
@@ -235,7 +239,15 @@ u32_t ucLoadToU16(u16_t *u16buf, char *fname)
     u8buf[u8n++] = '\0';
     fclose(fp);
 
+#ifdef UNICODE_INFO
+    fprintf(stdout, "UTF-8 encoded, %d characters, ", u8n);
+#endif
+
     u16n = _ucU8ToU16(u16buf, u8buf, u8n);
+
+#ifdef UNICODE_INFO
+    fprintf(stdout, "converted to UTF-16 encoding, %d characters\n", u16n);
+#endif
 
     return u16n;
   }
