@@ -8,6 +8,10 @@ taken by another project, I have to give my repository another name.
 The main purpose of my program is to "puts" strings onto the linux 
 framebuffer, so I use "fb" as the prefix of "puts" and name the repository
 as "fbputs".
+
+The code in this program can be used as a reference to display unicode characters,
+ex. in a GUI.
+
 ```
 
 ## Features
@@ -43,6 +47,7 @@ If you run this program with no arguments, it will show you some demo contents o
 
 ./fbputs <filename>
 If you run this program with a filename, it will display the file content.
+For example: ./fbputs UTF-8-Soft-LF.txt
 ```
 
 ## About Unicode
