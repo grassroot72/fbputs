@@ -20,6 +20,7 @@ int main(int argc, char **argv)
 {
   /* get something to display */
   u16_t u16buf[U16_NCHARS];
+  u32_t u16len;
 
 
   if (fbInit("/dev/fb0")) {
@@ -37,8 +38,10 @@ int main(int argc, char **argv)
 
 
   if (argc == 2) {
-    ucLoadToU16(u16buf, argv[1]);
-    sbPuts(u16buf, FNTB | COLORF, COLOR0);
+    u16len = ucLoadToU16(u16buf, argv[1]);
+    if (u16len != 0) {
+      sbPuts(u16buf, FNTB | COLORF, COLOR0);
+    }
   }
   else {
 #ifdef DEMO
