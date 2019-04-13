@@ -202,6 +202,10 @@ u32_t ucLoadToU16(u16_t *u16buf, char *fname)
   FILE *fp;
 
   fp = fopen(fname, "rb");
+  if (fp == NULL) {
+    fprintf(stderr, "Cannot open file %s\n", fname);
+    return 0;
+  }
 
   /* read a u16_char to check the BOM */
   fread(&ch, sizeof(u16_t), 1, fp);
