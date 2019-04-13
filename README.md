@@ -32,6 +32,14 @@ git clone https://github.com/grassroot72/fbputs.git
 ## Building
 ```
 make
+
+If you want to see some demo character of this program, you can add "-D DEMO"
+to CFLAGS of the Makefile,
+
+If you want to see more info of loading unicode files, you can add "-D UNICODE_INFO"
+to CFLAGS of the Makefile,
+
+Of course, you can add both "-D DEMO -D UNICODE_INFO".
 ```
 
 ## Testing
