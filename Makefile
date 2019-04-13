@@ -1,7 +1,7 @@
 # fbputs makefile
 
 CC = gcc
-CFLAGS = -O2 -Wall `pkg-config --cflags freetype2`-D DEMO -D UNICODE_INFO
+CFLAGS = -O2 -Wall `pkg-config --cflags freetype2`
 LDFLAGS = `pkg-config --libs freetype2`
 OBJS = fb.o \
        font.o \
