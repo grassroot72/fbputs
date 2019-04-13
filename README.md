@@ -20,7 +20,7 @@ ex. in a GUI.
 -- Use UTF-16 encoding internally to display unicode characters
 -- Does Not reply on linux locale to get decoding unicode characters correctly
 -- Support Hard linefeeds, soft linefeeds
--- Support both LF(Linux), CRLF(Windows) end of linux
+-- Support both LF(Linux), CRLF(Windows) end of line
 -- Auto detect UTF-8 & UTF-16 encoded files
 ```
 
