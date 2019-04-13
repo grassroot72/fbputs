@@ -33,7 +33,7 @@ git clone https://github.com/grassroot72/fbputs.git
 ```
 make
 
-If you want to see some demo character of this program, you can add "-D DEMO"
+If you want to see some demo characters of this program, you can add "-D DEMO"
 to CFLAGS of the Makefile,
 
 If you want to see more info of loading unicode files, you can add "-D UNICODE_INFO"
