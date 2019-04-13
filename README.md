@@ -46,7 +46,7 @@ Of course, you can add both "-D DEMO -D UNICODE_INFO".
 ```
 ./fbputs
 
-If you built with "-D DEMO" and run this program with no arguments, it will show 
+If you build with "-D DEMO" and run this program with no arguments, it will show 
 you some demo contents of the following files:
   -- UTF-8-LF.txt
   -- UTF-8-CRLF.txt
