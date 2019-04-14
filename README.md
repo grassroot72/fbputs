@@ -12,6 +12,8 @@ as "fbputs".
 The code in this program can be used as a reference to display unicode characters,
 ex. in a GUI.
 
+Currently, fbputs can only display unicode files with Byte Order Mark (BOM).
+
 ```
 
 ## Features
@@ -21,7 +23,7 @@ ex. in a GUI.
 -- Does Not reply on linux locale to get decoding unicode characters correctly
 -- Support Hard linefeeds, soft linefeeds
 -- Support both LF(Linux), CRLF(Windows) end of line
--- Auto detect UTF-8 & UTF-16 encoded files
+-- Auto detect UTF-8 & UTF-16 encoded files (with BOM)
 ```
 
 ## Cloning
@@ -45,7 +47,6 @@ Of course, you can add both "-D DEMO -D UNICODE_INFO".
 ## Testing
 ```
 ./fbputs
-
 If you build with "-D DEMO" and run this program with no arguments, it will show 
 you some demo contents of the following files:
   -- UTF-8-LF.txt
@@ -57,6 +58,14 @@ you some demo contents of the following files:
 ./fbputs <filename>
 If you run this program with a filename, it will display the file content.
 For example: ./fbputs UTF-8-Soft-LF.txt
+
+You may encounter "failed to initialize the framebuffer" problem, that is you
+don't have the authorization to open framebuffer device. You can do either the
+followings to solve the issue:
+
+(a). add your user to video group (sudo gpasswd -a <your user> video), then
+     run 'fbpus' by your own user
+(b). use root to run 'fbpus'
 ```
 
 ## About Unicode
