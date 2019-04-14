@@ -24,7 +24,7 @@ int main(int argc, char **argv)
 
 
   if (fbInit("/dev/fb0")) {
-    fprintf(stderr, "fbenv: failed to initialize the framebuffer\n");
+    fprintf(stderr, "failed to initialize the framebuffer\n");
     return 1;
   }
 

@@ -105,7 +105,7 @@ int fbInit(char *dev)
   return 0;
 
 failed:
-  fprintf(stderr,"fbInit()");
+  fprintf(stderr,"fbInit()\n");
   close(_fb.fd);
   return 1;
 }
