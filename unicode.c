@@ -72,8 +72,9 @@ static const u8_t _UTF8tailbytes[256] = {
   Convert a UTF-8 buffer to a UTF-32 buffer
     u8len - length in s8_t characters
 
-  Note: only works for valid UTF-8 sequences, 
-        not for 5- or 6-byte sequences
+  NOTE:
+  only works for valid UTF-8 sequences, 
+  not for 5- or 6-byte sequences
 
   Return: number of characters converted
 */
@@ -125,7 +126,8 @@ static u32_t _ucU8ToU32(u32_t *u32buf, s8_t *u8buf, u32_t u8len)
 /*
   Convert a UTF-32 buffer to a UTF-16 buffer
 
-  Note: no UTF-16 surrogate considered
+  NOTE:
+  no UTF-16 surrogate considered
 */
 static void _ucU32ToU16(u16_t *u16buf, u32_t *u32buf, u32_t len)
 {

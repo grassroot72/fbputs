@@ -39,18 +39,20 @@ struct _freetype2_font_s {
   u8_t img[CELLH][CELLW];
 };
 
-/* Note: I know it is not a good practice to declare avariable _ft at this
-         scope and this makes the code quite cohesive, but I couldn't refuse
-         the following benefits,
-   (a). convenient to protect struct _freetype2_font_s's data members
-   (b). shorter function code (if you believe ... :)
+/*
+  NOTE:
+  I know it is not a good practice to declare avariable _ft at this
+  scope and this makes the code quite cohesive, but I couldn't refuse
+  the following benefits,
+  (a). convenient to protect struct _freetype2_font_s's data members
+  (b). shorter function code (if you believe ... :)
 */
 static struct _freetype2_font_s _ft;
 
 
 /*
   Set the text line height 
-   h - text line height in pixels (both sfnt and dfnt)
+    h - text line height in pixels (both sfnt and dfnt)
 */
 static int _ftSetH(int h)
 {
@@ -128,9 +130,9 @@ static void _ftLoadCh(FT_Face face, FT_UInt g_idx)
 
 /*
   Convert a character to bitmap
-   ch - UTF-16 character
-   dw - double width character?
-   bold - bold
+    ch - UTF-16 character
+    dw - double width character?
+    bold - bold
 */
 static void _ftCh2Bmp(u16_t ch, int dw, int bold)
 {

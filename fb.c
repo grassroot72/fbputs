@@ -42,11 +42,13 @@ struct _framebuffer_s {
   int bl, br;                /* blue left, right shifts */
 };
 
-/* Note: I know it is not a good practice to declare avariable _fb at this
-         scope and this makes the code quite cohesive, but I couldn't refuse
-         the following benefits,
-   (a). convenient to protect struct _framebuffer_s's data members
-   (b). shorter function code (if you believe ... :)
+/*
+  NOTE:
+  I know it is not a good practice to declare avariable _fb at this
+  scope and this makes the code quite cohesive, but I couldn't refuse
+  the following benefits,
+  (a). convenient to protect struct _framebuffer_s's data members
+  (b). shorter function code (if you believe ... :)
 */
 static struct _framebuffer_s _fb;
 

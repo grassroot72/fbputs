@@ -28,16 +28,31 @@ struct _screenbuffer_s {
   int nrows;    /* maximum number of visible screen rows */
   int ncols;    /* maximum number of visible screen cols (cells) */
 
-  u16_t buf[NROWS * NCOLS];     /* screen buffer */
+  /*
+    NOTE:
+    Although this struct is named _screenbuffer_s, but the data member buf
+    is not used, the buf can be filled and processed before output to the
+    framebuffer, thus, ex. screen scrolling can be achieved. That is one of
+    the features of the framebuffer based terminals. To write a framebuffer
+    based terminal, this buf may be frequently used, but that is not the
+    purpose of this little program anymore.
+
+    If to further develop a framebuffer base terminal, the data member buf
+    is very important.
+  */
+  u16_t buf[NROWS * NCOLS];
+
   ft32_t fgs[NROWS * NCOLS];    /* character foreground color */
   fb32_t bgs[NROWS * NCOLS];    /* character background color */
 };
 
-/* Note: I know it is not a good practice to declare avariable _sb at this
-         scope and this makes the code quite cohesive, but I couldn't refuse
-         the following benefits,
-   (a). convenient to protect struct _screenbuffer_s's data members
-   (b). shorter function code (if you believe ... :)
+/*
+  NOTE:
+  I know it is not a good practice to declare avariable _sb at this
+  scope and this makes the code quite cohesive, but I couldn't refuse
+  the following benefits,
+  (a). convenient to protect struct _screenbuffer_s's data members
+  (b). shorter function code (if you believe ... :)
 */
 static struct _screenbuffer_s _sb;
 
