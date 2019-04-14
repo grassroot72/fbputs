@@ -59,7 +59,7 @@ you some demo contents of the following files:
 If you run this program with a filename, it will display the file content.
 For example: ./fbputs UTF-8-Soft-LF.txt
 
-You may encounter "failed to initialize the framebuffer" problem, that is you
+You may encounter "failed to initialize the framebuffer" problem, which means you
 don't have the authorization to open framebuffer device. You can do either the
 followings to solve the issue:
 
