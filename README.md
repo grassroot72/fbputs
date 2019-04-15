@@ -46,6 +46,9 @@ Of course, you can add both "-D DEMO -D UNICODE_INFO".
 
 ## Testing
 ```
+To run fbputs, you need to temporarily exit the X windows desktop and enter the
+console by press CTRL + ALT + F2.
+
 ./fbputs
 If you build with "-D DEMO" and run this program with no arguments, it will show 
 you some demo contents of the following files:
@@ -64,8 +67,8 @@ don't have the authorization to open framebuffer device. You can do either the
 followings to solve the issue:
 
 (a). add your user to video group (sudo gpasswd -a <your user> video), then
-     run 'fbpus' by your own user
-(b). use root to run 'fbpus'
+     run 'fbputs' by your own user
+(b). use root to run 'fbputs'
 ```
 
 ## About Unicode
