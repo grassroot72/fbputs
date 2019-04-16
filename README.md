@@ -47,7 +47,7 @@ Of course, you can add both "-D DEMO -D UNICODE_INFO".
 ## Testing
 ```
 To run fbputs, you need to temporarily exit the X windows desktop and enter the
-console by press CTRL + ALT + F2.
+console by pressing CTRL + ALT + F2.
 
 ./fbputs
 If you build with "-D DEMO" and run this program with no arguments, it will show 
