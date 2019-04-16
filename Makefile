@@ -1,9 +1,10 @@
 # fbputs makefile
 
 CC = gcc
-CFLAGS = -O2 -Wall `pkg-config --cflags freetype2`
+CFLAGS = -O2 -Wall `pkg-config --cflags freetype2` -D DEMO -D UNICODE_INFO
 LDFLAGS = `pkg-config --libs freetype2`
-OBJS = fb.o \
+OBJS = apex_memmove.o \
+       fb.o \
        font.o \
        sb.o \
        unicode.o \
