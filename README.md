@@ -77,6 +77,6 @@ In Asia, most of the time, double width characters are used, UTF-16 encoding
 is more efficient than UTF-8 encoding. It has less memory footprint and use 
 less CPU time to process.
 
-Is it possible to create a default UTF-16 encoded linux kernel for Asia countries?
+Is it possible to create a default UTF-16 encoded linux kernel for Asian countries?
 ...... Just joking :) 
 ```
