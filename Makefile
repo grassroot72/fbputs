@@ -1,7 +1,7 @@
 # fbputs makefile
 
 CC = gcc
-CFLAGS = -O2 -Wall `pkg-config --cflags freetype2`
+CFLAGS = -O2 -Wall `pkg-config --cflags freetype2` -D DEMO
 LDFLAGS = `pkg-config --libs freetype2`
 OBJS = apex_memmove.o \
        fb.o \
@@ -9,16 +9,15 @@ OBJS = apex_memmove.o \
        sb.o \
        unicode.o \
        fbputs.o
-EXE = fbputs
+EXES = fbputs
 
+all: ${EXES}
 
-all: $(EXE)
+${EXES}: $(OBJS)
+	$(CC) -o $@ $^ $(LDFLAGS)
 
 %.o: %.c
-	$(CC) -c $< $(CFLAGS)
-
-$(EXE): $(OBJS)
-	$(CC) -o $@ $(OBJS) $(LDFLAGS)
+	${CC} -o $@ -c $< $(CFLAGS)
 
 clean:
-	rm -f $(OBJS) $(EXE)
+	$(RM) $(OBJS) $(EXES)
