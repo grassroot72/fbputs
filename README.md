@@ -74,7 +74,7 @@ followings to solve the issue:
 ## About Unicode
 ```
 In Asia, most of the time, double width characters are used, UTF-16 encoding 
-is more efficient than UTF-8 encoding. It has less memory footprint and use 
+is more efficient than UTF-8 encoding. It has less memory footprint and uses 
 less CPU time to process.
 
 Is it possible to create a default UTF-16 encoded linux kernel for Asian countries?
