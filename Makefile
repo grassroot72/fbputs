@@ -20,4 +20,4 @@ ${EXES}: $(OBJS)
 	${CC} -o $@ -c $< $(CFLAGS)
 
 clean:
-	$(RM) $(OBJS) $(EXES)
+	$(RM) *.o $(EXES)
