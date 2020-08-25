@@ -1,10 +1,8 @@
 /*
-  fb.c
-
-  Copyright (C) 2019 by Edward LEI
-
-  This code is licensed under the MIT license
-*/
+ * Copyright (C) 2019  Edward LEI <edward_lei72@hotmail.com>
+ *
+ * The code is licensed under the MIT license
+ */
 
 #include <unistd.h>
 #include <fcntl.h>
@@ -43,13 +41,13 @@ struct _framebuffer_s {
 };
 
 /*
-  NOTE:
-  I know it is not a good practice to declare avariable _fb at this
-  scope and this makes the code quite cohesive, but I couldn't refuse
-  the following benefits,
-  (a). convenient to protect struct _framebuffer_s's data members
-  (b). shorter function code (if you believe ... :)
-*/
+ * NOTE:
+ * I know it is not a good practice to declare avariable _fb at this
+ * scope and this makes the code quite cohesive, but I couldn't refuse
+ * the following benefits,
+ * (a). convenient to protect struct _framebuffer_s's data members
+ * (b). shorter function code (if you believe ... :)
+ */
 static struct _framebuffer_s _fb;
 
 /*----- End: Internally used variables & functions ---------------------------*/

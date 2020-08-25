@@ -1,10 +1,8 @@
 /*
-  conf.h 
-
-  Copyright (C) 2019 by Edward LEI
-
-  This code is licensed under the MIT license
-*/
+ * Copyright (C) 2019  Edward LEI <edward_lei72@hotmail.com>
+ *
+ * The code is licensed under the MIT license
+ */
 
 #ifndef _CONF_H_
 #define _CONF_H_

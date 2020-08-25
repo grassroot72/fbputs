@@ -1,10 +1,8 @@
 /*
-  unicode.c
-
-  Copyright (C) 2019 by Edward LEI
-
-  This code is licensed under the MIT license
-*/
+ * Copyright (C) 2019  Edward LEI <edward_lei72@hotmail.com>
+ *
+ * The code is licensed under the MIT license
+ */
 
 #include <stdio.h>
 
@@ -69,15 +67,15 @@ static const u8_t _UTF8tailbytes[256] = {
 };
 
 /*
-  Convert a UTF-8 buffer to a UTF-32 buffer
-    u8len - length in s8_t characters
-
-  NOTE:
-  only works for valid UTF-8 sequences, 
-  not for 5- or 6-byte sequences
-
-  Return: number of characters converted
-*/
+ * Convert a UTF-8 buffer to a UTF-32 buffer
+ *   u8len - length in s8_t characters
+ *
+ * NOTE:
+ * only works for valid UTF-8 sequences,
+ * not for 5- or 6-byte sequences
+ *
+ * Return: number of characters converted
+ */
 static u32_t _ucU8ToU32(u32_t *u32buf, s8_t *u8buf, u32_t u8len)
 {
   s8_t *u8ps;      /* pointer start */
@@ -124,11 +122,11 @@ static u32_t _ucU8ToU32(u32_t *u32buf, s8_t *u8buf, u32_t u8len)
 }
 
 /*
-  Convert a UTF-32 buffer to a UTF-16 buffer
-
-  NOTE:
-  no UTF-16 surrogate considered
-*/
+ * Convert a UTF-32 buffer to a UTF-16 buffer
+ *
+ * NOTE:
+ * no UTF-16 surrogate considered
+ */
 static void _ucU32ToU16(u16_t *u16buf, u32_t *u32buf, u32_t len)
 {
   u32_t i;
@@ -138,13 +136,13 @@ static void _ucU32ToU16(u16_t *u16buf, u32_t *u32buf, u32_t len)
   }
 }
 
-/* 
-  Check the BOM (Byte Order Mark)
-
-  Return:  0 - UTF-16 BOM
-           1 - part of UTF-8 BOM
-          -1 - invalid unicode BOM
-*/
+/*
+ * Check the BOM (Byte Order Mark)
+ *
+ * Return:  0 - UTF-16 BOM
+ *          1 - part of UTF-8 BOM
+ *          -1 - invalid unicode BOM
+ */
 int _ucBOMChk(u16_t ch)
 {
   /* UTF-16 BOM, 0xFEFF (little endian) */
@@ -152,11 +150,11 @@ int _ucBOMChk(u16_t ch)
     return 0;
   }
   /*
-    The UTF-8 BOM, 0xEFBBBF (little endian)
-
-    To read the first 2 bytes of UTF-8 BOM as a UTF-16 character,
-    it should be read as 0xBBEF
-  */
+   * The UTF-8 BOM, 0xEFBBBF (little endian)
+   *
+   * To read the first 2 bytes of UTF-8 BOM as a UTF-16 character,
+   * it should be read as 0xBBEF
+   */
   else if (ch == 0xbbef) {
     return 1;
   }
@@ -167,8 +165,8 @@ int _ucBOMChk(u16_t ch)
 }
 
 /*
-  Convert a UTF-8 buffer to a UTF-16 buffer
-*/
+ * Convert a UTF-8 buffer to a UTF-16 buffer
+ */
 u32_t _ucU8ToU16(u16_t *u16buf, s8_t *u8buf, u32_t u8len)
 {
   u32_t u32buf[U32_NCHARS];

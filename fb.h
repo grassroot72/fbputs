@@ -1,10 +1,8 @@
 /*
-  fb.h
-
-  Copyright (C) 2019 by Edward LEI
-
-  This code is licensed under the MIT license
-*/
+ * Copyright (C) 2019  Edward LEI <edward_lei72@hotmail.com>
+ *
+ * The code is licensed under the MIT license
+ */
 
 #ifndef _FB_H_
 #define _FB_H_
@@ -49,7 +47,7 @@ void *fbRow(int r);
 */
 void fbSet(int r, int c, void *mem, int len);
 
-/* 
+/*
   Draw a box with color c on the framebuffer
     sr - pixel start row
     er - pixel end row

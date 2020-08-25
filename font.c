@@ -1,10 +1,8 @@
 /*
-  font.c
-
-  Copyright (C) 2019 by Edward LEI
-
-  This code is licensed under the MIT license
-*/
+ * Copyright (C) 2019  Edward LEI <edward_lei72@hotmail.com>
+ *
+ * The code is licensed under the MIT license
+ */
 
 #include <stdio.h>
 #include <ft2build.h>
@@ -27,11 +25,11 @@ struct _freetype2_font_s {
   int ascender;          /* maximum ascender */
   int descender;         /* minimun descender, that is max abs(descender) */
 
-  /* 
-    The terminal screen is filled with characters. A single width character
-    takes a single cell whilst a double width character takes 2 consecutive
-    cells.
-  */
+  /*
+   * The terminal screen is filled with characters. A single width character
+   * takes a single cell whilst a double width character takes 2 consecutive
+   * cells.
+   */
   int h;                 /* single cell height in pixels */
   int w;                 /* single cell width in pixels */
 
@@ -40,20 +38,20 @@ struct _freetype2_font_s {
 };
 
 /*
-  NOTE:
-  I know it is not a good practice to declare avariable _ft at this
-  scope and this makes the code quite cohesive, but I couldn't refuse
-  the following benefits,
-  (a). convenient to protect struct _freetype2_font_s's data members
-  (b). shorter function code (if you believe ... :)
-*/
+ * NOTE:
+ * I know it is not a good practice to declare avariable _ft at this
+ * scope and this makes the code quite cohesive, but I couldn't refuse
+ * the following benefits,
+ * (a). convenient to protect struct _freetype2_font_s's data members
+ * (b). shorter function code (if you believe ... :)
+ */
 static struct _freetype2_font_s _ft;
 
 
 /*
-  Set the text line height 
-    h - text line height in pixels (both sfnt and dfnt)
-*/
+ * Set the text line height
+ *   h - text line height in pixels (both sfnt and dfnt)
+ */
 static int _ftSetH(int h)
 {
   int s_ascender, s_descender;      /* for single width character */
@@ -95,8 +93,8 @@ static int _ftSetH(int h)
 }
 
 /*
-  Generate a character bitmap on image buffer
-*/
+ * Generate a character bitmap on image buffer
+ */
 static void _ftBmp(FT_Bitmap *bmp, FT_Int x, FT_Int y)
 {
   FT_Int i, j, p, q;
@@ -114,8 +112,8 @@ static void _ftBmp(FT_Bitmap *bmp, FT_Int x, FT_Int y)
 }
 
 /*
-  Load a single character
-*/
+ * Load a single character
+ */
 static void _ftLoadCh(FT_Face face, FT_UInt g_idx)
 {
   /* load glyph image into the slot (erase previous one) */
@@ -129,11 +127,11 @@ static void _ftLoadCh(FT_Face face, FT_UInt g_idx)
 }
 
 /*
-  Convert a character to bitmap
-    ch - UTF-16 character
-    dw - double width character?
-    bold - bold
-*/
+ * Convert a character to bitmap
+ *   ch - UTF-16 character
+ *   dw - double width character?
+ *   bold - bold
+ */
 static void _ftCh2Bmp(u16_t ch, int dw, int bold)
 {
   FT_Face face;        /* handle to face object */
